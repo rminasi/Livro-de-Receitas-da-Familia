@@ -3,6 +3,8 @@
 <div class="container">
   <% @recipes.each do |recipe| %>
   <%= link_to (recipe_path(recipe)) %>
+  <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path recipe.photo %>)" >
+  </div>
   <%= @recipe.name %>
   <% end %>
 
