@@ -1,11 +1,12 @@
 class IngredientsController < ApplicationController
-  # def new
-  #   @ingredient = Ingredient.find(params[:recipe_id])
-  # end
+
+  def new
+    @ingredient = Ingredient.find(params[:recipe_id])
+  end
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    @Ingredient = Ingredient.new(ingredient_params)
+    @ingredient = Ingredient.new(ingredient_params)
     @ingredient.recipe = @recipe
     if @ingredient.save
       redirect_to recipe_path(@recipe)
@@ -19,6 +20,7 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
     @recipe = Recipe.find(@ingredient.recipe_id)
   end
+
   private
 
   def ingredient_params
