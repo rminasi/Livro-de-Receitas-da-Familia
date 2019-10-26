@@ -1,11 +1,11 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :update , :destroy]
+  before_action :set_recipe, only: [:show, :update, :destroy]
   def index
     @recipes = Recipe.all
   end
 
-  def show
-  end
+  # def show
+  # end
 
   def new
     @recipe = Recipe.new
