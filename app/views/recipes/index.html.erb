@@ -1,10 +1,9 @@
-
-
 <div class="container">
   <div class="recipes">
   <% @recipes.each do |recipe| %>
   <%= link_to (recipe_path(recipe)) %>
- <%= recipe.name %>
+  <%= recipe.name %>
+  <%= recipe.description %>
   <% end %>
   </div>
 </div>
